@@ -1,0 +1,14 @@
+.questionHeader {
+  display: "flex";
+  flex-direction: "row";
+  justify-content: "space-between";
+  align-items: "center";
+}
+
+.questionHeaderText {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+}
