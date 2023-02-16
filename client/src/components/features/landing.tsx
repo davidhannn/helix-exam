@@ -5,7 +5,6 @@ const Landing: React.FC = () => {
     <div
       style={{
         background: "#969696",
-
         height: "242px",
         borderRadius: "32px",
         display: "flex",

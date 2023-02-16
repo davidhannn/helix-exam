@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { QuestionContext } from "../../context/questionContext";
 import Question from "./question";
 import About from "./about";
+import Response from "./response/response";
 import Experts from "./experts";
 
 const Feature: React.FC = () => {
@@ -17,7 +18,8 @@ const Feature: React.FC = () => {
         marginTop: "63px",
       }}
     >
-      {display && <Question />}
+      <Response />
+      {/* {display && <Question />} */}
       <div
         style={{
           display: "flex",
