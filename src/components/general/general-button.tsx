@@ -18,7 +18,7 @@ const GeneralButton: React.FC<ButtonProps & { text: string }> = ({
   ...rest
 }: Props) => {
   return (
-    <button className="button" {...rest}>
+    <button className="button" {...rest} style={{ color: "white" }}>
       <span className="buttonText">{text}</span>
     </button>
   );

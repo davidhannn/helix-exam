@@ -54,7 +54,11 @@ const AvatarRow: React.FC<Props> = ({
           }}
         >
           <span style={subHeaderTextStyle ?? {}}>{subTitle}</span>
-          <img src={UpvoteSvg} alt={"upvote-img"} style={{ marginLeft: 4 }} />
+          <img
+            src={UpvoteSvg}
+            alt={"upvote-img"}
+            style={{ marginLeft: 4, marginRight: 14 }}
+          />
 
           <span style={subHeaderTextStyle ?? {}}>
             {collected ? "collected" : ""}
