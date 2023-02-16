@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class Question {
@@ -14,16 +14,4 @@ export class Question {
     length: 2000,
   })
   text: string;
-
-  @Column()
-  author: string;
-
-  @Column()
-  timeStamp: number;
-
-  @Column()
-  answers: number;
-
-  @Column()
-  questions: number;
 }

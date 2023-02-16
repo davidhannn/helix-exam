@@ -2,11 +2,12 @@ import * as express from "express";
 import questionRoute from "./routes/question";
 // import {Routes} from "./routes/Routes";
 import bodyParser = require("body-parser");
+import cors = require("cors");
 
 const app = express();
 const PORT = process.env.PORT;
 
-// app.use(cors());
+app.use(cors());
 app.use(express.json());
 // app.use(morgan('dev'));
 // app.set('trust proxy', 1);
