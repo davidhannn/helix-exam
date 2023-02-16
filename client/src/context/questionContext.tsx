@@ -1,22 +1,25 @@
 import { createContext, useState, PropsWithChildren, useCallback } from "react";
+import { DisplayEnum } from "../constants/enums";
 
 type ContextProps = {
-  display: boolean;
-  handleClick: () => void | null;
+  display: DisplayEnum;
+  handleClick: (option: DisplayEnum) => void | null;
 };
 
 export const QuestionContext = createContext<ContextProps>({
-  display: false,
-  handleClick: () => {},
+  display: DisplayEnum.NONE,
+  handleClick: (option) => {},
 });
 
 const QuestionProvider: React.FC<PropsWithChildren> = ({ children }) => {
-  const [display, setDisplay] = useState<boolean>(false);
+  const [display, setDisplay] = useState<DisplayEnum>(DisplayEnum.NONE);
 
-  const handleClick = useCallback(() => {
-    // console.log("pressed?");
-    setDisplay(!display);
-  }, [display]);
+  const handleClick = useCallback(
+    (option: DisplayEnum) => {
+      setDisplay(option);
+    },
+    [display]
+  );
 
   // const handleSubmit = useCallback(() => {}, []);
   // const postQuestion = useCallback(() => {

@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { QuestionContext } from "../../context/questionContext";
+import { DisplayEnum } from "../../constants/enums";
 import GeneralButton from "../general/general-button";
 
 const Header: React.FC = () => {
@@ -17,7 +18,10 @@ const Header: React.FC = () => {
         justifyContent: "flex-end",
       }}
     >
-      <GeneralButton text="Ask a Question" handleClick={handleClick} />
+      <GeneralButton
+        text="Ask a Question"
+        handleClick={() => handleClick(DisplayEnum.QUESTION)}
+      />
     </div>
   );
 };

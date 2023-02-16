@@ -6,20 +6,27 @@ import { ResponseData } from "../../../utils";
 const Response: React.FC = () => {
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
-      {ResponseData.map((item, idx) => (
-        <BlockWrapper
-          styles={{
-            backgroundColor: "white",
-            padding: 24,
-            borderRadius: 25,
-            marginBottom: 24,
-            height: "274px",
-            width: "751px",
-          }}
-        >
-          <ResponseBody data={item} key={idx} />
-        </BlockWrapper>
-      ))}
+      {ResponseData.map(
+        ({ title, question, username, answerCount, questionCount }) => (
+          <BlockWrapper
+            styles={{
+              backgroundColor: "white",
+              padding: 24,
+              borderRadius: 25,
+              marginBottom: 24,
+              height: "274px",
+            }}
+          >
+            <ResponseBody
+              title={title}
+              question={question}
+              username={username}
+              answerCount={answerCount}
+              questionCount={questionCount}
+            />
+          </BlockWrapper>
+        )
+      )}
     </div>
   );
 };

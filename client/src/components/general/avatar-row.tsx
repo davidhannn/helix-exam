@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
+import { DisplayEnum } from "../../constants/enums";
+import { QuestionContext } from "../../context/questionContext";
 import UpvoteSvg from "../../images/Upvote.svg";
 import "../../styles/row.scss";
 
@@ -21,10 +23,12 @@ const AvatarRow: React.FC<Props> = ({
   upvotes,
   collected,
 }: Props) => {
+  const { handleClick } = useContext(QuestionContext);
   console.log(collected);
   return (
     <div
       // className="avatarRowContainer"
+      onClick={() => handleClick(DisplayEnum.RESPONSE)}
       style={{
         display: "flex",
         flexDirection: "row",
