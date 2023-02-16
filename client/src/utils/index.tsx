@@ -4,6 +4,8 @@ import OutlineUpvoteSvg from "../images/OutlineUpvote.svg";
 import TokensSvg from "../images/Tokens.svg";
 import ExpertSvg from "../images/Expert.svg";
 
+export const server = "http://localhost:8080";
+
 export type AboutDataProps = {
   count: number;
   text: string;

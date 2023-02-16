@@ -18,6 +18,11 @@ const QuestionProvider: React.FC<PropsWithChildren> = ({ children }) => {
     setDisplay(!display);
   }, [display]);
 
+  // const handleSubmit = useCallback(() => {}, []);
+  // const postQuestion = useCallback(() => {
+
+  // }, [])
+
   return (
     <QuestionContext.Provider value={{ display, handleClick }}>
       {children}
