@@ -9,10 +9,6 @@ const ResponseBody = ({
   answerCount,
   questionCount,
 }: ResponseDataProps) => {
-  // console.log(data);
-  // const { title, question, username, answerCount, questionCount } = data;
-  // console.log(data.question, "data");
-  console.log(title, "data");
   return (
     <div>
       <p
@@ -23,8 +19,6 @@ const ResponseBody = ({
         }}
       >
         {title}
-        {/* {data.title} */}
-        MongoDB how to search by using regex but avoiding case sensitive?
       </p>
       <p
         style={{
@@ -34,9 +28,7 @@ const ResponseBody = ({
           marginTop: "12px",
         }}
       >
-        It allows users anywhere in the world to trade crypto without an
-        intermediary. UNI, the governance token that allows users to vote on key
-        protocol changes, is one of the largest cryptocurrencies by market cap..
+        {question}
       </p>
 
       <hr
@@ -67,11 +59,7 @@ const ResponseBody = ({
           alignItems: "center",
         }}
       >
-        <img
-          src={ExpertSvg}
-          alt={"expert-img"}
-          // style={{ marginTop: "8px" }}
-        />
+        <img src={ExpertSvg} alt={"expert-img"} />
 
         <div
           style={{
@@ -92,7 +80,7 @@ const ResponseBody = ({
               color: "#6074DD",
             }}
           >
-            Pseudo Near Expert
+            {username}
           </span>
           <span
             style={{
@@ -105,7 +93,7 @@ const ResponseBody = ({
             }}
           >
             {" "}
-            2 Answers 1 Question
+            {answerCount} Answers {questionCount} Question
           </span>
         </div>
       </div>
