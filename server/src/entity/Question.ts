@@ -1,14 +1,18 @@
-import { Entity, Column } from "typeorm";
+import { Entity, Column, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class Question {
-  @Column()
+  @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({
+    length: 300,
+  })
   title: string;
 
-  @Column()
+  @Column({
+    length: 2000,
+  })
   text: string;
 
   @Column()

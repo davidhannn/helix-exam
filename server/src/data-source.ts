@@ -15,3 +15,13 @@ export const AppDataSource = new DataSource({
   migrations: ["src/migration/**/*.ts"],
   subscribers: ["src/subscriber/**/*.ts"],
 });
+
+export const connectToDB = async () => {
+  try {
+    await AppDataSource.initialize().then(() => {
+      console.log("initialized!");
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
