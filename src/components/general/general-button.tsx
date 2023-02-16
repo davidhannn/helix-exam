@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../../styles/button.module.css";
+import "../../styles/button.scss";
 
 export interface ButtonProps
   extends React.DetailedHTMLProps<
@@ -12,13 +12,14 @@ type Props = {
   text: string;
 };
 
+// TODO Fix Button text color
 const GeneralButton: React.FC<ButtonProps & { text: string }> = ({
   text,
   ...rest
 }: Props) => {
   return (
-    <button className={styles.button} {...rest}>
-      {text}
+    <button className="button" {...rest}>
+      <span className="buttonText">{text}</span>
     </button>
   );
 };

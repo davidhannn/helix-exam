@@ -1,18 +1,19 @@
 import React from "react";
-import "./App.css";
+import "./App.scss";
 import Header from "./components/features/header";
 import Landing from "./components/features/landing";
 import About from "./components/features/about";
+import Experts from "./components/features/experts";
 import Question from "./components/features/question";
 
 function App() {
   return (
     <div
-      style={{
-        backgroundColor: "#E9E9E9",
-        height: "100vh",
-        overflowY: "hidden",
-      }}
+      className="app"
+      // style={{
+      //   backgroundColor: "#E9E9E9",
+
+      // }}
     >
       <Header />
 
@@ -29,7 +30,15 @@ function App() {
           }}
         >
           <Question />
-          <About />
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            <About />
+            <Experts />
+          </div>
         </div>
       </div>
     </div>
