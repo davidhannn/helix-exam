@@ -1,16 +1,18 @@
 import ChatBubbleSvg from "../images/ChatBubble.svg";
 import PeopleGroupSvg from "../images/PeopleGroup.svg";
-import UpvoteSvg from "../images/Upvote.svg";
+import OutlineUpvoteSvg from "../images/OutlineUpvote.svg";
 import TokensSvg from "../images/Tokens.svg";
+import ExpertSvg from "../images/Expert.svg";
 
-type AboutDataProps = {
+export type AboutDataProps = {
   count: number;
   text: string;
   icon: string;
   timesOneThousand?: boolean;
 };
 
-type ExpertDataProps = {
+export type ExpertDataProps = {
+  avatar?: string;
   title: string;
   upvotes: number;
   collected?: boolean;
@@ -31,7 +33,7 @@ export const AboutData: AboutDataProps[] = [
   {
     count: 50,
     text: "Upvotes",
-    icon: UpvoteSvg,
+    icon: OutlineUpvoteSvg,
     timesOneThousand: true,
   },
   {
@@ -43,21 +45,25 @@ export const AboutData: AboutDataProps[] = [
 
 export const ExpertData: ExpertDataProps[] = [
   {
+    avatar: ExpertSvg,
     title: "Pseudo Near Expert",
     upvotes: 47,
     collected: true,
   },
   {
+    avatar: ExpertSvg,
     title: "Near Expert",
     upvotes: 47,
     collected: true,
   },
   {
+    avatar: ExpertSvg,
     title: "Bitcoin Maxi",
     upvotes: 47,
     collected: true,
   },
   {
+    avatar: ExpertSvg,
     title: "Ethereum Maxi",
     upvotes: 47,
     collected: true,

@@ -1,7 +1,5 @@
 import React from "react";
 import GeneralButton from "../general/general-button";
-// import css from "../styles/colors.css";
-// const styles = css as any;
 
 const Header: React.FC = () => {
   return (
