@@ -10,15 +10,20 @@ export interface ButtonProps
 
 type Props = {
   text: string;
+  handleClick?: () => void;
 };
 
 // TODO Fix Button text color
-const GeneralButton: React.FC<ButtonProps & { text: string }> = ({
-  text,
-  ...rest
-}: Props) => {
+const GeneralButton: React.FC<
+  ButtonProps & { text: string; handleClick: () => void }
+> = ({ text, handleClick, ...rest }: Props) => {
   return (
-    <button className="button" {...rest} style={{ color: "white" }}>
+    <button
+      className="button"
+      {...rest}
+      style={{ color: "white" }}
+      onClick={handleClick}
+    >
       <span className="buttonText">{text}</span>
     </button>
   );

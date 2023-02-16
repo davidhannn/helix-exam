@@ -78,7 +78,7 @@ const Question: React.FC = () => {
           />
 
           <div style={{ position: "absolute", bottom: 20, right: -140 }}>
-            <GeneralButton text="Post" />
+            <GeneralButton text="Post" handleClick={() => {}} />
           </div>
 
           {/* <hr className="solid" /> */}
