@@ -13,7 +13,6 @@ type Props = {
   handleClick?: () => void;
 };
 
-// TODO Fix Button text color
 const GeneralButton: React.FC<
   ButtonProps & { text: string; handleClick: () => void }
 > = ({ text, handleClick, ...rest }: Props) => {

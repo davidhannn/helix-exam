@@ -2,9 +2,12 @@ import { QuestionContext } from "../../context/questionContext";
 import ImagesSvg from "../../images/Images.svg";
 import CloseSvg from "../../images/CircleX.svg";
 import "../../styles/question.scss";
+import axios from "axios";
 import GeneralButton from "../general/general-button";
 import BlockWrapper from "../general/block-wrapper";
-import { useContext } from "react";
+import { useContext, useState, ChangeEventHandler } from "react";
+
+import { server } from "../../utils/index";
 
 const questionStyles = {
   backgroundColor: "white",
@@ -20,6 +23,30 @@ const questionStyles = {
 
 const Question: React.FC = () => {
   const { handleClick } = useContext(QuestionContext);
+
+  const [title, setTitle] = useState<string>("");
+  const [questionText, setQuestionText] = useState<string>("");
+
+  // const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   setTitle(e.currentTarget.value);
+  // };
+
+  const handleSubmit = () => {
+    if (title.length === 0 || questionText.length === 0) {
+      alert("Missing input fields");
+    }
+    // axios.get(`${server}/questions`).then((res) => {
+    //   console.log(res, "res");
+    // });
+
+    axios
+      .post(`${server}/questions`, {
+        title,
+        questionText,
+      })
+      .then((resp) => console.log(resp));
+  };
+
   return (
     <BlockWrapper styles={questionStyles}>
       <div
@@ -47,7 +74,8 @@ const Question: React.FC = () => {
         }}
       >
         <textarea
-          // type="text"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
           placeholder="Enter the question title"
           style={{
             borderRadius: "16px",
@@ -61,8 +89,8 @@ const Question: React.FC = () => {
         />
         <div style={{ position: "relative" }}>
           <textarea
-            // type="text"
-
+            value={questionText}
+            onChange={(e) => setQuestionText(e.target.value)}
             placeholder="Write your question here"
             style={{
               borderRadius: "16px",
@@ -79,7 +107,7 @@ const Question: React.FC = () => {
           />
 
           <div style={{ position: "absolute", bottom: 20, right: -140 }}>
-            <GeneralButton text="Post" handleClick={() => {}} />
+            <GeneralButton text="Post" handleClick={handleSubmit} />
           </div>
 
           {/* <hr className="solid" /> */}
@@ -106,37 +134,6 @@ const Question: React.FC = () => {
               alt={"gallery-img"}
             />
           </div>
-
-          {/* <div
-            style={{
-              position: "absolute",
-              bottom: 10,
-              left: 10,
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "space-between",
-              alignItems: "center",
-              width: "100%",
-              height: "62px",
-            }}
-          >
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "space-between",
-              }}
-            >
-              <span>Aa</span>
-              <img
-                src={ImagesSvg}
-                style={{ marginLeft: "24px" }}
-                alt={"gallery-img"}
-              />
-            </div>
-
-            <GeneralButton text="Post" />
-          </div> */}
         </div>
       </div>
     </BlockWrapper>
