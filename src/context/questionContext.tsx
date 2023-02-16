@@ -14,6 +14,7 @@ const QuestionProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const [display, setDisplay] = useState<boolean>(false);
 
   const handleClick = useCallback(() => {
+    // console.log("pressed?");
     setDisplay(!display);
   }, [display]);
 

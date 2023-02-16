@@ -1,10 +1,10 @@
-import { FormEvent } from "react";
-
+import { QuestionContext } from "../../context/questionContext";
 import ImagesSvg from "../../images/Images.svg";
 import CloseSvg from "../../images/CircleX.svg";
 import "../../styles/question.scss";
 import GeneralButton from "../general/general-button";
 import BlockWrapper from "../general/block-wrapper";
+import { useContext } from "react";
 
 const questionStyles = {
   backgroundColor: "white",
@@ -19,6 +19,7 @@ const questionStyles = {
 };
 
 const Question: React.FC = () => {
+  const { handleClick } = useContext(QuestionContext);
   return (
     <BlockWrapper styles={questionStyles}>
       <div
@@ -31,7 +32,7 @@ const Question: React.FC = () => {
         }}
       >
         <h3 className="questionHeaderText">New Question</h3>
-        <img src={CloseSvg} />
+        <img src={CloseSvg} onClick={handleClick} alt="close-button" />
       </div>
 
       <hr
@@ -98,6 +99,7 @@ const Question: React.FC = () => {
             >
               Aa
             </span>
+
             <img
               src={ImagesSvg}
               style={{ marginLeft: "16px" }}
