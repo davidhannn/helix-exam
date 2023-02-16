@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { QuestionContext } from "../../context/questionContext";
 import GeneralButton from "../general/general-button";
 
 const Header: React.FC = () => {
+  const { handleClick } = useContext(QuestionContext);
+
   return (
     <div
       style={{
@@ -14,7 +17,7 @@ const Header: React.FC = () => {
         justifyContent: "flex-end",
       }}
     >
-      <GeneralButton text="Ask a Question" />
+      <GeneralButton text="Ask a Question" handleClick={handleClick} />
     </div>
   );
 };

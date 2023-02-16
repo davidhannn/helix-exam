@@ -16,7 +16,12 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "paths": {
-      "~/*": ["./src/*"]
+      "~/*": ["./src/*"],
+      "~general/*": ["./src/components/general/*"],
+      "~features/*": ["./src/components/features/*"]
+      // "~styles/*": ["./src/styles/*"],
+      // "~context/*": ["./src/context/*"],
+      // "~images/*": ["./src/images/*"]
     }
   },
   "include": ["src"]
