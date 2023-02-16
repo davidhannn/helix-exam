@@ -2,9 +2,15 @@ import ExpertSvg from "../../../images/Expert.svg";
 
 import { ResponseDataProps } from "~/utils";
 
-const ResponseBody = (data: any) => {
-  console.log(data);
-  const { title, question, username, answerCount, questionCount } = data;
+const ResponseBody = ({
+  title,
+  question,
+  username,
+  answerCount,
+  questionCount,
+}: ResponseDataProps) => {
+  // console.log(data);
+  // const { title, question, username, answerCount, questionCount } = data;
   // console.log(data.question, "data");
   console.log(title, "data");
   return (
@@ -16,6 +22,7 @@ const ResponseBody = (data: any) => {
           fontSize: "16px",
         }}
       >
+        {title}
         {/* {data.title} */}
         MongoDB how to search by using regex but avoiding case sensitive?
       </p>

@@ -16,8 +16,6 @@ const QuestionProvider: React.FC<PropsWithChildren> = ({ children }) => {
 
   const handleClick = useCallback(
     (option: DisplayEnum) => {
-      console.log("here?");
-      // console.log("pressed?");
       setDisplay(option);
     },
     [display]

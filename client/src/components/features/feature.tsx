@@ -32,7 +32,7 @@ const Feature: React.FC = () => {
     >
       <div
         style={
-          display
+          display === DisplayEnum.QUESTION
             ? {
                 width: "70%",
                 justifyContent: "flex-end",
