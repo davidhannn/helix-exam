@@ -14,7 +14,6 @@ const Response: React.FC = () => {
             borderRadius: 25,
             marginBottom: 24,
             height: "274px",
-            width: "751px",
           }}
         >
           <ResponseBody data={item} key={idx} />

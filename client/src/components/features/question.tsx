@@ -5,6 +5,7 @@ import "../../styles/question.scss";
 import axios from "axios";
 import GeneralButton from "../general/general-button";
 import BlockWrapper from "../general/block-wrapper";
+import { DisplayEnum } from "../../constants/enums";
 import { useContext, useState, ChangeEventHandler } from "react";
 
 import { server } from "../../utils/index";
@@ -59,7 +60,11 @@ const Question: React.FC = () => {
         }}
       >
         <h3 className="questionHeaderText">New Question</h3>
-        <img src={CloseSvg} onClick={handleClick} alt="close-button" />
+        <img
+          src={CloseSvg}
+          onClick={() => handleClick(DisplayEnum.NONE)}
+          alt="close-button"
+        />
       </div>
 
       <hr

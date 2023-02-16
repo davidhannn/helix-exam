@@ -16,8 +16,8 @@ const ResponseBody = (data: any) => {
           fontSize: "16px",
         }}
       >
-        {data?.title}
-        {/* MongoDB how to search by using regex but avoiding case sensitive? */}
+        {/* {data.title} */}
+        MongoDB how to search by using regex but avoiding case sensitive?
       </p>
       <p
         style={{
